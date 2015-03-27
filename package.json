@@ -1,0 +1,29 @@
+{
+  "name": "domcss.js",
+  "version": "0.1.0",
+  "description": "Compute CSS properties and position of DOM elements.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/florianeckerstorfer/domcss.js.git"
+  },
+  "keywords": [
+    "dom",
+    "css",
+    "position"
+  ],
+  "author": "Florian Eckerstorfer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/florianeckerstorfer/domcss.js/issues"
+  },
+  "homepage": "https://github.com/florianeckerstorfer/domcss.js",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-sourcemaps": "^1.5.1"
+  }
+}

@@ -10,13 +10,15 @@
         </header>
     </div>
 
-    <script src="src/domcss.js"></script>
+    <script src="build/domcss.js"></script>
     <script>
         var domCSS = new DomCSS(['font-family', 'font-size', 'color']);
         domCSS.attachToDOM(document.body);
         console.log('computeStyles()', domCSS.computeStyles(document.querySelector('h1 a')));
         console.log('computeStyle()', domCSS.computeStyle(document.querySelector('h1 a'), 'font-size'));
         console.log('computePosition()', domCSS.computePosition(document.querySelector('h1 a')));
+        console.log('document.body.children[0].computedCSSProperties', document.body.children[0].computedCSSProperties);
+        console.log('document.body.children[0].computedPosition', document.body.children[0].computedPosition);
     </script>
 </body>
 </html>

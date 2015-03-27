@@ -1,7 +1,7 @@
 domcss.js
 =========
 
-> Add computed CSS values to DOM elements.
+> Compute CSS properties and position of DOM elements.
 
 Developed by [Florian Eckerstorfer](https://florian.ec) ([@Florian_](https://twitter.com/Florian_)) in Vienna, Europe.
 
