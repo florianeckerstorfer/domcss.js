@@ -4,11 +4,13 @@
 <title>domcss.js</title>
 </head>
 <body>
-    <header>
-        <h1><a href="demo.html">domcss.js</a></h1>
-    </header>
+    <div id="wrapper">
+        <header>
+            <h1><a href="demo.html">domcss.js</a></h1>
+        </header>
+    </div>
 
     <script src="src/domcss.js"></script>
-    <script>var domCSS = new DomCSS(document);</script>
+    <script>var domCSS = new DomCSS(); domCSS.compute(document.body);</script>
 </body>
 </html>

@@ -13,19 +13,7 @@
         window.DomCSS = factory();
     }
 }(window, function factory() {
-    var DomCSS = function (rootElement) {
-        var elements = rootElement.querySelectorAll('*'),
-            styles;
-
-        for (var i = 0; i < elements.length; i++) {
-            styles = {};
-            for (var j = 0; j < DomCSS.properties.length; j++) {
-                styles[DomCSS.properties[j]] = this.getStyle(elements[i], DomCSS.properties[j]);
-            }
-            elements[i].computedCSSStyles = styles;
-            elements[i].computedPosition  = this.getPosition(elements[i]);
-        }
-        console.log(elements);
+    var DomCSS = function () {
     };
 
     DomCSS.properties = [
@@ -146,6 +134,21 @@
         'writing-mode',
         'z-index'
     ];
+
+    DomCSS.prototype.compute = function(rootElement) {
+        var elements = rootElement.querySelectorAll('*'),
+            styles;
+
+        for (var i = 0; i < elements.length; i++) {
+            styles = {};
+            for (var j = 0; j < DomCSS.properties.length; j++) {
+                styles[DomCSS.properties[j]] = this.getStyle(elements[i], DomCSS.properties[j]);
+            }
+            elements[i].computedCSSStyles = styles;
+            elements[i].computedPosition  = this.getPosition(elements[i]);
+        }
+        console.log(elements);
+    };
 
     DomCSS.prototype.getPosition = function(element) {
         var range = document.createRange();
