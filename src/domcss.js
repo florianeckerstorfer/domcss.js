@@ -13,10 +13,11 @@
         window.DomCSS = factory();
     }
 }(window, function factory() {
-    var DomCSS = function () {
+    var DomCSS = function (properties) {
+        this.properties = properties || this.constructor.defaultProperties;
     };
 
-    DomCSS.properties = [
+    DomCSS.defaultProperties = [
         'background-color',
         'background-image',
         'background-origin',
@@ -135,22 +136,26 @@
         'z-index'
     ];
 
-    DomCSS.prototype.compute = function(rootElement) {
+    DomCSS.prototype.attachToDOM = function(rootElement) {
         var elements = rootElement.querySelectorAll('*'),
             styles;
 
         for (var i = 0; i < elements.length; i++) {
-            styles = {};
-            for (var j = 0; j < DomCSS.properties.length; j++) {
-                styles[DomCSS.properties[j]] = this.getStyle(elements[i], DomCSS.properties[j]);
-            }
-            elements[i].computedCSSStyles = styles;
-            elements[i].computedPosition  = this.getPosition(elements[i]);
+            elements[i].computedCSSStyles = this.computeStyles(elements[i]);
+            elements[i].computedPosition  = this.computePosition(elements[i]);
         }
-        console.log(elements);
     };
 
-    DomCSS.prototype.getPosition = function(element) {
+    DomCSS.prototype.computeStyles = function(element) {
+        var styles = {};
+        for (var j = 0; j < this.properties.length; j++) {
+            styles[this.properties[j]] = this.computeStyle(element, this.properties[j]);
+        }
+
+        return styles;
+    };
+
+    DomCSS.prototype.computePosition = function(element) {
         var range = document.createRange();
         range.selectNode(element);
         var rect = range.getBoundingClientRect();
@@ -165,7 +170,7 @@
         };
     };
 
-    DomCSS.prototype.getStyle = function(element, style) {
+    DomCSS.prototype.computeStyle = function(element, style) {
         if(!document.getElementById) {
             return;
         }

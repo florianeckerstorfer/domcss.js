@@ -11,6 +11,12 @@
     </div>
 
     <script src="src/domcss.js"></script>
-    <script>var domCSS = new DomCSS(); domCSS.compute(document.body);</script>
+    <script>
+        var domCSS = new DomCSS(['font-family', 'font-size', 'color']);
+        domCSS.attachToDOM(document.body);
+        console.log('computeStyles()', domCSS.computeStyles(document.querySelector('h1 a')));
+        console.log('computeStyle()', domCSS.computeStyle(document.querySelector('h1 a'), 'font-size'));
+        console.log('computePosition()', domCSS.computePosition(document.querySelector('h1 a')));
+    </script>
 </body>
 </html>
