@@ -141,7 +141,7 @@
             styles;
 
         for (var i = 0; i < elements.length; i++) {
-            elements[i].computedCSSStyles = this.computeStyles(elements[i]);
+            elements[i].computedCSSProperties = this.computeStyles(elements[i]);
             elements[i].computedPosition  = this.computePosition(elements[i]);
         }
     };

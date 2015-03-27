@@ -26,6 +26,8 @@ Compute CSS and position for all elements in `<body>` and attach to DOM:
 
 ```javascript
 domCSS.attachToDOM(document.body);
+// document.body.children[0].computedPosition -> {"x1": 8, "x2": 138.671875, "y1": 0, "y2": 32}
+// document.body.children[0].computedCSSProperties -> {"color": "rgb(0, 0, 238)", ...}
 ```
 
 ### computeStyles()
