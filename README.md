@@ -1,9 +1,19 @@
-domcss.js
+domcss.js [![NPM](https://img.shields.io/npm/v/domcss.js.svg)](https://www.npmjs.com/package/domcss.js)
 =========
 
 > Compute CSS properties and position of DOM elements.
 
 Developed by [Florian Eckerstorfer](https://florian.ec) ([@Florian_](https://twitter.com/Florian_)) in Vienna, Europe.
+
+Installation
+------------
+
+You can install `domcss.js` from [NPM](https://www.npmjs.com):
+
+```shell
+$ npm install domcss.js
+```
+
 
 Usage
 -----
