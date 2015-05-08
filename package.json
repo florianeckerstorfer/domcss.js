@@ -1,6 +1,6 @@
 {
   "name": "domcss.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Compute CSS properties and position of DOM elements.",
   "repository": {
     "type": "git",

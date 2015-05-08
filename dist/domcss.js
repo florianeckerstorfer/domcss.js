@@ -161,7 +161,7 @@
         range.selectNode(element);
         var rect = range.getBoundingClientRect();
         var left = window.pageXOffset+rect.left;
-        var top = window.pageYOffset;
+        var top = window.pageYOffset+rect.top;
 
         return {
             x1: left,
